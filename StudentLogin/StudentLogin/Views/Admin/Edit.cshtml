@@ -1,0 +1,26 @@
+﻿@model IEnumerable<StudentLogin.Models.Stud>
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+
+@foreach (var item in Model)
+{
+
+    <form action="/Admin/Edit/@Html.DisplayFor(modelItem => item.ID)" method="post">
+        <input readonly id="ID" name="ID" type="text" class=" feedback-input" value="
+               @Html.DisplayFor(modelItem => item.ID)" />
+        <input id="Name" name="Name" type="text" class=" feedback-input" value="
+            @Html.DisplayFor(modelItem => item.Name)" />
+
+        <input id="Email" name="Email" type="text" class=" feedback-input" value="
+               @Html.DisplayFor(modelItem => item.Email)" />
+        <input id="mobileno" name="mobileno" type="text" class="feedback-input" value="
+            @Html.DisplayFor(modelItem => item.mobileno)" />
+        <input type="submit" value="SUBMIT" />
+    </form>
+    break;
+}
